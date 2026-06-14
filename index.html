@@ -961,6 +961,386 @@
     border: none;
     margin: 0;
   }
+
+  @media print {
+    /* Set page margins */
+    @page {
+      margin: 20mm 15mm 20mm 15mm;
+    }
+    
+    /* Reset colors to clean light theme */
+    body {
+      background: #ffffff !important;
+      color: #111111 !important;
+      background-image: none !important;
+      font-size: 12px !important;
+      line-height: 1.5 !important;
+    }
+    
+    /* Hide interactive elements, ambient blobs, and navigation */
+    nav, 
+    .mobile-menu-btn, 
+    .mobile-nav, 
+    .mobile-nav-backdrop, 
+    .back-to-top, 
+    .glowing-blob,
+    .project-filter-section,
+    .divider,
+    footer div:not([style*="display:flex"]) {
+      display: none !important;
+    }
+    
+    /* Layout styling for print */
+    section {
+      padding: 1.5rem 0 !important;
+      page-break-inside: auto;
+    }
+    
+    /* Hero section spacing */
+    #hero {
+      min-height: auto !important;
+      padding-top: 1rem !important;
+      padding-bottom: 1.5rem !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      page-break-after: avoid;
+    }
+    
+    .hero-eyebrow {
+      color: #4b5563 !important;
+      font-size: 10px !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .hero-eyebrow::before {
+      display: none !important;
+    }
+    
+    .hero-name {
+      font-size: 32px !important;
+      color: #000000 !important;
+      margin-bottom: 0.75rem !important;
+      line-height: 1.1 !important;
+    }
+    
+    .hero-name em {
+      font-style: normal !important;
+      background: none !important;
+      -webkit-text-fill-color: initial !important;
+      color: #000000 !important;
+      text-shadow: none !important;
+    }
+    
+    .hero-tagline {
+      font-size: 13px !important;
+      color: #374151 !important;
+      max-width: 100% !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .hero-chips {
+      display: none !important;
+    }
+    
+    .hero-cta {
+      display: none !important;
+    }
+    
+    /* Highlights Grid */
+    .highlights-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1rem !important;
+      margin-bottom: 1rem !important;
+    }
+    
+    .highlight-item {
+      background: none !important;
+      backdrop-filter: none !important;
+      border: 1px solid #e5e7eb !important;
+      padding: 1rem !important;
+      border-radius: 8px !important;
+      box-shadow: none !important;
+      transform: none !important;
+    }
+    
+    .highlight-num {
+      font-size: 18px !important;
+      color: #2563eb !important;
+      margin-bottom: 0.25rem !important;
+    }
+    
+    .highlight-label {
+      font-size: 11px !important;
+      color: #4b5563 !important;
+    }
+    
+    /* Section titles */
+    .section-header {
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .section-tag {
+      border: none !important;
+      background: none !important;
+      color: #2563eb !important;
+      padding: 0 !important;
+      font-size: 9px !important;
+      font-weight: 700 !important;
+    }
+    
+    .section-title {
+      font-size: 20px !important;
+      color: #000000 !important;
+      margin-bottom: 1.25rem !important;
+      border-bottom: 2px solid #e5e7eb !important;
+      padding-bottom: 0.5rem !important;
+    }
+    
+    /* About & Education layout */
+    .two-col {
+      display: block !important;
+    }
+    
+    .two-col > div {
+      margin-bottom: 1.5rem !important;
+    }
+    
+    /* Education block background reset */
+    .two-col div[style*="background"] {
+      background: none !important;
+      border: none !important;
+      padding: 0 !important;
+      backdrop-filter: none !important;
+    }
+    
+    /* Projects Grid */
+    .projects-grid {
+      display: block !important;
+    }
+    
+    .project-card {
+      background: none !important;
+      backdrop-filter: none !important;
+      border: none !important;
+      border-bottom: 1px solid #e5e7eb !important;
+      padding: 1rem 0 !important;
+      margin-bottom: 0.5rem !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      transform: none !important;
+      page-break-inside: avoid;
+      display: block !important;
+    }
+    
+    /* Ensure all project cards show up in PDF print */
+    .project-card.hidden-card {
+      display: block !important;
+    }
+    
+    .project-card::before, .project-card::after {
+      display: none !important;
+    }
+    
+    .project-icon {
+      display: none !important;
+    }
+    
+    .project-title {
+      font-size: 14px !important;
+      color: #000000 !important;
+      margin-bottom: 0.25rem !important;
+      font-weight: 700 !important;
+    }
+    
+    .project-desc {
+      font-size: 11px !important;
+      color: #374151 !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .project-stack {
+      margin-bottom: 0.25rem !important;
+    }
+    
+    .stack-tag {
+      background: #f3f4f6 !important;
+      border: 1px solid #e5e7eb !important;
+      color: #4b5563 !important;
+      font-size: 9px !important;
+      padding: 2px 6px !important;
+    }
+    
+    .project-card a {
+      font-size: 10px !important;
+      color: #2563eb !important;
+    }
+    
+    /* Other repos list */
+    div[style*="border-bottom"] {
+      border-bottom: 1px solid #e5e7eb !important;
+      padding: 0.5rem 0 !important;
+      page-break-inside: avoid;
+    }
+    
+    div[style*="border-bottom"] a {
+      color: #2563eb !important;
+      font-size: 12px !important;
+    }
+    
+    div[style*="border-bottom"] span[style*="color:var(--muted)"] {
+      color: #374151 !important;
+      font-size: 11px !important;
+      margin-left: 8px !important;
+    }
+    
+    /* Experience items */
+    .exp-item {
+      display: block !important;
+      padding: 1rem 0 !important;
+      border-bottom: 1px solid #e5e7eb !important;
+      page-break-inside: avoid;
+    }
+    
+    .exp-date {
+      font-size: 11px !important;
+      color: #4b5563 !important;
+      margin-bottom: 0.25rem !important;
+    }
+    
+    .exp-role {
+      font-size: 14px !important;
+      color: #000000 !important;
+      font-weight: 700 !important;
+    }
+    
+    .exp-org {
+      font-size: 11px !important;
+      color: #2563eb !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .exp-bullets {
+      margin-top: 0.5rem !important;
+    }
+    
+    .exp-bullets li {
+      font-size: 11px !important;
+      color: #374151 !important;
+      margin-bottom: 0.25rem !important;
+    }
+    
+    .exp-bullets li::before {
+      color: #10b981 !important;
+    }
+    
+    /* Skills */
+    .skills-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 1rem !important;
+    }
+    
+    .skill-card {
+      background: none !important;
+      backdrop-filter: none !important;
+      border: 1px solid #e5e7eb !important;
+      padding: 0.75rem !important;
+      border-radius: 8px !important;
+      box-shadow: none !important;
+      transform: none !important;
+      page-break-inside: avoid;
+    }
+    
+    .skill-card-title {
+      font-size: 10px !important;
+      color: #111111 !important;
+      border-bottom: 1px solid #e5e7eb !important;
+      padding-bottom: 0.25rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+    
+    .skill-tag {
+      font-size: 9px !important;
+      color: #374151 !important;
+      background: #f3f4f6 !important;
+      border: 1px solid #e5e7eb !important;
+    }
+    
+    /* Achievements */
+    .achievement-item {
+      padding: 0.75rem 0 !important;
+      border-bottom: 1px solid #e5e7eb !important;
+      page-break-inside: avoid;
+    }
+    
+    .achievement-icon-wrap {
+      display: none !important;
+    }
+    
+    .achievement-title {
+      font-size: 12px !important;
+      color: #000000 !important;
+      font-weight: 700 !important;
+    }
+    
+    .achievement-desc {
+      font-size: 11px !important;
+      color: #4b5563 !important;
+    }
+    
+    /* Certifications */
+    .cert-card {
+      background: none !important;
+      backdrop-filter: none !important;
+      border: none !important;
+      border-bottom: 1px solid #e5e7eb !important;
+      padding: 0.75rem 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      transform: none !important;
+      page-break-inside: avoid;
+      display: block !important;
+    }
+    
+    .cert-badge {
+      display: none !important;
+    }
+    
+    .cert-title {
+      font-size: 12px !important;
+      color: #000000 !important;
+      font-weight: 700 !important;
+    }
+    
+    .cert-issuer {
+      font-size: 11px !important;
+      color: #2563eb !important;
+    }
+    
+    /* Footer */
+    footer {
+      border-top: 1px solid #e5e7eb !important;
+      background: none !important;
+      padding: 1.5rem 0 !important;
+    }
+    
+    footer p {
+      color: #000000 !important;
+      font-size: 11px !important;
+    }
+    
+    footer div {
+      display: flex !important;
+      gap: 1rem !important;
+      justify-content: center !important;
+      margin-top: 0.5rem !important;
+    }
+    
+    footer a {
+      color: #374151 !important;
+      font-size: 10px !important;
+      text-decoration: underline !important;
+    }
+  }
 </style>
 </head>
 <body>
